@@ -26,6 +26,16 @@ void readline_safe(char* destination, int max_chars);
  */
 struct token_array tokenize(char* line_buffer, size_t max_size);
 
+/**
+ * @brief Free the memory allocated for the tokens in the token array
+ * 
+ * @param token_arr 
+ */
 void delete_token_array(struct token_array token_arr);
+
+#define IS_CHAR_NUMERIC(c) (((c >= '0') && (c <= '9')) || (c == '.'))
+#define IS_CHAR_BRACKET(c) ((c == '(') || (c == ')'))
+#define IS_CHAR_TEXT(c) (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')))
+#define IS_CHAR_OPERATOR(c) ((c == '+') || (c == '-') || (c == '/') || (c == '*') || (c == '^') || (c == '%'))
 
 #endif /* UTIL_H */

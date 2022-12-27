@@ -1,3 +1,16 @@
+/**
+ * Copyright 2022 (c) by Michał Gibas
+ * 
+ * This file contains the structures and functions
+ * necessary for creating, storing and evaluating 
+ * arithmetic expressions in postfix notation, 
+ * otherwise known as reverse Polish notation.
+ * 
+ * The expressions are stored in the expr_stack_t
+ * structure, it is a simple LIFO stack,
+ * with it's operations defined in functions:
+ * init_stack, delete_stack, push and pop 
+ */
 #ifndef EXPR_STACK_H
 #define EXPR_STACK_H
 
@@ -31,7 +44,7 @@ struct expr_t create_operator(char operator_char);
  */
 struct expr_t create_operand(double operand);
 
-/* simple LIFO stack for expressions */
+/* simple LIFO stack for expressions in postfix notation */
 struct expr_stack_t {
     struct expr_t* data;
     size_t capacity;
