@@ -20,11 +20,6 @@ void readline_safe(char* destination, int max_chars) {
     read[str_end] = '\0';
 }
 
-#define IS_CHAR_NUMERIC(c) (((c >= '0') && (c <= '9')) || (c == '.'))
-#define IS_CHAR_BRACKET(c) ((c == '(') || (c == ')'))
-#define IS_CHAR_TEXT(c) (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')))
-#define IS_CHAR_OPERATOR(c) ((c == '+') || (c == '-') || (c == '/') || (c == '*') || (c == '^') || (c == '%'))
-
 char* substr(char* str, size_t begin, size_t end) {
     assert(begin < end);
 
