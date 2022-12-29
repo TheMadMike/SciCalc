@@ -1,6 +1,5 @@
-#ifndef ASSERT_H
 #include <assert.h>
-#endif /* ASSERT_H */
+#include <stdio.h>
 
 #include "../expr_stack.h"
 
@@ -63,4 +62,9 @@ void exp_stack_test_push_pop() {
 void exp_stack_test_run_all() {
     exp_stack_test_push_pop();
     exp_stack_test_expr_eval();
+}
+
+int main(void) {
+    exp_stack_test_run_all();
+    puts("All tests passed! :)");
 }
