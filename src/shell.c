@@ -11,15 +11,14 @@
 
 static struct token_array tokens;
 
-void handle_sigint(int flags) {
+void handle_exit(void) {
     puts(GOODBYE_MESSAGE);
     if(tokens.tokens != NULL)
         delete_token_array(tokens);
-    exit(0);
 } 
 
 int shell_run(void) {
-    signal(SIGINT, handle_sigint);
+    atexit(handle_exit);
 
     printf(INITIAL_PROMPT_FORMAT, VERSION_STRING);
 
@@ -40,8 +39,6 @@ int shell_run(void) {
                 puts(HELP_MESSAGE);
             }
             else if(strcmp(tokens.tokens[0], "exit") == 0) {
-                puts(GOODBYE_MESSAGE);
-                delete_token_array(tokens);
                 return 0;
             }
         }
@@ -52,6 +49,6 @@ int shell_run(void) {
     return 0;
 }
 
-void print_error_message(int error_code) {
+void print_error_message([[maybe_unused]]int error_code) {
     /* TODO: add messages to associated error codes */
 }

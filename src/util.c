@@ -22,8 +22,13 @@ void readline_safe(char* destination, int max_chars) {
 
 char* substr(char* str, size_t begin, size_t end) {
     assert(begin < end);
+    assert(str != NULL);
 
     char* sub_str = calloc((end - begin) + 1, sizeof(char));
+    
+    if(sub_str == NULL)
+        return NULL;
+
     sub_str[end - begin] = '\0';
 
     for(size_t i = begin; i < end; ++i) {

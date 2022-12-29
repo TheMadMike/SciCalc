@@ -53,7 +53,7 @@ struct expr_t create_operand(double operand) {
 double evaluate_expression(struct expr_stack_t* stack) {
     double a, b;
     char operator;
-    double result;
+    double result = 0.0;
 
     while(stack->element_count > 1) {
         a = stack->top->data.operand;
