@@ -1,3 +1,3 @@
 # CLI scientific calculator
 
-![build status (main)](https://github.com/TheMadMike/SciCalc/blob/main/.github/workflows/cmake.yml/badge.svg)
+[![Build](https://github.com/TheMadMike/SciCalc/actions/workflows/cmake.yml/badge.svg)](https://github.com/TheMadMike/SciCalc/actions/workflows/cmake.yml)
